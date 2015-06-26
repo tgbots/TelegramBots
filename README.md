@@ -1,4 +1,4 @@
-# Telegram Bot Java Library
+# Telegram Bot Java Library (Java 8)
 A simple to use library to create Telegram Bots in Java (Still Beta Version)
 
 ## Webhooks vs GetUpdates
