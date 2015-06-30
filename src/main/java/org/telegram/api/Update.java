@@ -3,7 +3,7 @@ package org.telegram.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import org.json.JSONObject;
-import sun.print.UnixPrintJob;
+//import sun.print.UnixPrintJob;
 
 /**
  * @author Ruben Bermudez

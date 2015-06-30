@@ -15,5 +15,7 @@ public class Main {
         UpdatesCallback transifexBot = new TransifexHandlers();
         UpdatesCallback filesBot = new FilesHandlers();
         UpdatesCallback directionsBot = new DirectionsHandlers();
+        UpdatesCallback calcBot = new CalcHandlers();
+        System.out.println("bot started");
     }
 }

@@ -34,6 +34,8 @@ public class CustomMessages {
 	    "To get directions between two locations: \n" +
             "|-- " + Commands.startDirectionCommand + " : Start to get directions\n";
 
+    public static final String helpCalc = "This simple calc returns the sum of your first and second number. \nPlease try /sum 2 3";
+
     public static final String sendFileToUpload = "Please send me a file you want to share. Make sure you attach it as file, not as an image or video.";
     public static final String fileUploaded = "Great, your file has been uploaded. Send this link to anyone you want and they will be able to download the file:\n\n";
     public static final String deleteUploadedFile = "Please select the file you want to delete:";

@@ -21,8 +21,8 @@ public class BuildVars {
 
     public static final String pathToLogs = "./";
 
-    public static final String linkDB = "jdbc:mysql://localhost:3306/YOURDATABSENAME?useUnicode=true&characterEncoding=UTF-8";
+    public static final String linkDB = "jdbc:mysql://<your-host>:3306/<your-database-name>?useUnicode=true&characterEncoding=UTF-8";
     public static final String controllerDB = "com.mysql.jdbc.Driver";
-    public static final String userDB = "<your-database-user>";
-    public static final String password = "<your-databas-user-password>";
+    public static final String userDB = "<your-username>";
+    public static final String password = "<your-password>";
 }
