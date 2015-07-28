@@ -16,6 +16,7 @@ public class Main {
         UpdatesCallback filesBot = new FilesHandlers();
         UpdatesCallback directionsBot = new DirectionsHandlers();
         UpdatesCallback calcBot = new CalcHandlers();
+        UpdatesCallback motivateBot = new MotivateHandlers();
         System.out.println("bot started");
     }
 }

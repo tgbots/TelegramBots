@@ -12,7 +12,7 @@ public class CustomMessages {
             "|-- " + Commands.CURRENTWEATHERCOMMAND + " CITY,COUNTRY : Get the current weather of a city.\n" +
             "|-- Send a location to get the forecast for it.";
     public static final String helpTransifex = "Tricks with words is the game that I play, give it a shot, I might make your day.\n\n" +
-	    "To get the latest Telegram localization file for a language: \n" +
+            "To get the latest Telegram localization file for a language: \n" +
             "|-- " + Commands.transifexiOSCommand + " LANG_CODE : Get the latest iOS language.\n" +
             "|-- " + Commands.transifexAndroidCommand + " LANG_CODE : Get the latest android language.\n" +
             "|-- " + Commands.transifexWebogram + " LANG_CODE : Get the latest webogram language.\n" +
@@ -25,16 +25,17 @@ public class CustomMessages {
             "2. To get an updated localization file for your Android beta-app: \n" +
             "|-- " + Commands.transifexAndroidSupportCommand + " LANG_CODE : Get the latest Android-beta language.\n\n";
     public static final String helpFiles = "Leaving a file for some others to find? Just dock your boat here and a bay comes to mind.\n\n"+
-	    "Share files through a custom link: \n" +
+            "Share files through a custom link: \n" +
             "|-- " + Commands.startCommand + " FILEID : Get a file by id.\n" +
             "|-- " + Commands.uploadCommand + " : Start your file upload.\n" +
             "|-- " + Commands.deleteCommand + " : Choose one of your files to delete it.\n" +
             "|-- " + Commands.listCommand + " : Show a list of your shared files.\n\n";
     public static final String helpDirections = "The road ahead, paved with good intentions, the right path ahead however is what I tend to mention.\n\n" +
-	    "To get directions between two locations: \n" +
+            "To get directions between two locations: \n" +
             "|-- " + Commands.startDirectionCommand + " : Start to get directions\n";
 
-    public static final String helpCalc = "This simple calc returns the sum of your first and second number. \nPlease try /sum 2 3";
+    public static final String helpCalc = "I can calculate simple calculations like /calc 2,1-4*5. \n" +
+            "Or sums all your numbers when you send me /sum 2 -4 2.5";
 
     public static final String sendFileToUpload = "Please send me a file you want to share. Make sure you attach it as file, not as an image or video.";
     public static final String fileUploaded = "Great, your file has been uploaded. Send this link to anyone you want and they will be able to download the file:\n\n";
@@ -51,4 +52,6 @@ public class CustomMessages {
     public static final String sendDestination = "Please reply with your destination.";
     public static final String youNeedReplyDirections = "I'm sorry, I can't help you unless you reply to the message I sent you.";
     public static final String pleaseSendMeCityWeather = "Send me the city and country you are interested in, use this format: CITY,COUNTRY";
+
+    public static final String helpMotivate = "I'll try to motivate you go to do what you should do.";
 }
