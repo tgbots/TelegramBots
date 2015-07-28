@@ -8,8 +8,12 @@ import org.telegram.services.BotLogger;
 import org.telegram.updatesreceivers.UpdatesThread;
 import org.telegram.updatesreceivers.Webhook;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
+
 
 /**
  * Created by Mart-Jan on 2015-06-25.
@@ -55,15 +59,18 @@ public class CalcHandlers implements UpdatesCallback{
 
     public void anotherClass(Update update){
         Message message = update.getMessage();
-        if (message != null && message.hasText()) {
+        if (message != null && message.hasText() && !message.isReply()) {
+            boolean dosomething = true;
             String text = message.getText();
-            String[] parts = text.split(" ");
-            if (parts[0].startsWith(Commands.sum)) {
+
+            String outputmessage = "I am so broken \uD83D\uDE1E";
+            if (text.startsWith(Commands.sum)) {
+                String[] parts = text.split(" "); //split all spaces
 
                 double imput;
                 double output = 0;
                 boolean error = false;
-                String outputmessage;
+
 
                 if(parts.length > 1){
 
@@ -82,20 +89,55 @@ public class CalcHandlers implements UpdatesCallback{
                                 "Also negative numbers are supported.";
                     }else {
                         outputmessage = "Result: " + output;
-                }
+                    }
                 }else{
                     outputmessage = "Please enter at least one number.";
                 }
 
-                    SendMessage sendMessageRequest = new SendMessage();
-                    sendMessageRequest.setText(outputmessage);
-                    sendMessageRequest.setChatId(message.getChatId());
-                    SenderHelper.SendMessage(sendMessageRequest, TOKEN);
+            }else if(text.startsWith(Commands.calc)){
 
-            }else if (parts[0].startsWith(Commands.help) ||
+                String[] parts = text.split(" ",2);
+
+                String error = "I don't recognize this as a calculation: " + parts[1] + "\n" +
+                        "Please note that I am a SIMPLE calculator bot...";
+
+                if(parts[1].contains("^")){
+                    outputmessage = error;
+                }else {
+
+                    ScriptEngineManager mgr = new ScriptEngineManager();
+                    ScriptEngine engine = mgr.getEngineByName("JavaScript");
+
+                    String calc = null;
+                    try {
+                        calc = parts[1];
+                        calc = calc.replace(" ", "");
+                        calc = calc.replace(",", ".");
+                        try {
+                            outputmessage = calc + "=" + engine.eval(calc);
+                            outputmessage = outputmessage.replace("Infinity", "∞");
+                        } catch (ScriptException e) {
+                            outputmessage = error;
+                            //e.printStackTrace();
+                        }
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        outputmessage = "Please add a calculation \uD83D\uDE0A";
+                    }
+                }
+
+            }else if(text.startsWith("test")){
+                System.out.println("test");
+                outputmessage = "we are testing. yey";
+            }else if (text.startsWith(Commands.help) ||
                     (message.getText().startsWith(Commands.startCommand) || !message.isGroupMessage())) {
+                outputmessage = CustomMessages.helpCalc;
+            }else{
+                dosomething = false;
+            }
+
+            if(dosomething) {
                 SendMessage sendMessageRequest = new SendMessage();
-                sendMessageRequest.setText(CustomMessages.helpCalc);
+                sendMessageRequest.setText(outputmessage);
                 sendMessageRequest.setChatId(message.getChatId());
                 SenderHelper.SendMessage(sendMessageRequest, TOKEN);
             }

@@ -46,10 +46,10 @@ public class Commands {
     /// Start directions command
     public static final String startDirectionCommand = commandInitChar + "directions";
 
-    /// Sum all of the
+    /// Returns the sum of the given numbers
     public static final String sum = commandInitChar + "sum";
-    /// Start directions command
-    public static final String delimiter = commandInitChar + "delimiter";
+    /// Calculates this for you
+    public static final String calc = commandInitChar + "calc";
 
 
 }
