@@ -24,13 +24,13 @@ import java.util.HashMap;
 public class DatabaseManager {
     private static volatile BotLogger log = BotLogger.getLogger(DatabaseManager.class.getName()); ///< Logger
     private static volatile DatabaseManager instance;
-    private static volatile ConectionDB connetion;
+    private static volatile DBconnect connetion;
 
     /**
      * Private constructor (due to Singleton)
      */
     private DatabaseManager() {
-        connetion = new ConectionDB();
+        connetion = new DBconnect();
         final int currentVersion = connetion.checkVersion();
         log.info("Current db version: " + currentVersion);
         if (currentVersion < CreationStrings.version) {

@@ -12,4 +12,5 @@ public class BotConfig {
     public static final String TOKENFILES = "<token>";
     public static final String TOKENDIRECTIONS = "<token>";
     public static final String TOKENCALC = "<token>";
+    public static final String TOKENMOTIVATE = "<token>";
 }

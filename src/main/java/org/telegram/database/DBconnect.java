@@ -18,11 +18,11 @@ import java.sql.*;
  * @brief Connector to database
  * @date 3/12/14
  */
-public class ConectionDB {
-    private static volatile BotLogger log = BotLogger.getLogger(ConectionDB.class.getName());
+public class DBconnect {
+    private static volatile BotLogger log = BotLogger.getLogger(DBconnect.class.getName());
     private Connection currentConection;
 
-    public ConectionDB() {
+    public DBconnect() {
         this.currentConection = openConexion();
     }
 
